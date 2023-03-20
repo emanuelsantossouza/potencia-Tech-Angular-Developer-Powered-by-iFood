@@ -11,7 +11,7 @@
 
 const precoDEtanol = 5.79;
 const precoDGasolina = 6.66;
-let tipoDCombustivel = 'Gasolina';
+let tipoDCombustivel = 'Etanol';
 let gastoMedioPorKM = 10;
 const distanciaEmKM = 100;
 
@@ -20,8 +20,8 @@ const LitrosConsumidos = (distanciaEmKM / gastoMedioPorKM);
 if (tipoDCombustivel === "Etanol") {
     
     let valorGasto = LitrosConsumidos * precoDEtanol;
-    console.log(`O valor gato foi de ${valorGasto}`);
+    console.log(`O valor gato foi de: ` + precoDEtanol.toFixed(2));
 } else {
     valorGasto = LitrosConsumidos * precoDEtanol;
-    console.log(`O valor gasto foi de ${precoDGasolina}`);
+    console.log(`O valor gasto foi de: ` + precoDGasolina.toFixed(2));
 }
