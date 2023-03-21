@@ -1,7 +1,7 @@
 ## Repositório de todo o material trabalhado no Bootcamp da Dio sobre o Framework Angular
 
 # Seja bem-vindo!!!
-![image](https://user-images.githubusercontent.com/99850729/226665328-93233905-f9c1-49ab-83da-5f27e99b6f2c.png)
+![image](https://user-images.githubusercontent.com/99850729/226666078-9218fd5b-8440-4cd3-85ad-f7d3b8446a96.png)
 
 
 ## Dentro de cada pasta tera 1 readme, explicando o cada conteudo e codigo!!!
