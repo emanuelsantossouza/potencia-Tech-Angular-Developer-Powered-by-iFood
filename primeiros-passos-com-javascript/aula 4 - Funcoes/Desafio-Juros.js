@@ -1,5 +1,5 @@
 const produtoEtiqueta = 100;
-const formaDPagamento =4 ;
+const formaDPagamento = 4 ;
 
 
 function contaJurosDezPorcento(formaDPagamento, produtoEtiqueta) {
