@@ -1,6 +1,3 @@
-
-
-
 const alunos = ["João", " Vitor", "Mariana"];
 
 alunos.push('Emanuel'); // Adiciona
@@ -12,6 +9,8 @@ alunos.shift(); // apaga o primeiro
 console.log(alunos.length);
 
 
+
+// Soma a Media
 const notas = [];
 let conta = 0;
 notas.push(10);
@@ -20,15 +19,16 @@ notas.push(8);
 notas.push(7);
 notas.push(10);
 
-for (n = 0; n < notas.length; n++){
-    conta++;
-    notas[n] + notas[conta]
+for (let i = 0; i < notas.length; i++){
+    const nota = notas[1];
+    conta = conta + nota;
 }
 
+console.log(conta)
 console.log(media());
 
 function media() {
-    return notas.length / conta;
+    return conta / notas.length;
 }
 
 
