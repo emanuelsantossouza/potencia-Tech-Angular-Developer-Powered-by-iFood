@@ -4,8 +4,7 @@ let numeroTabuada = 7;
 
 function Tabuada(numeroTabuada) {
   for (i = 0; i <= 10; i++) {
-    let conta = numeroTabuada * i;
-    console.log(conta);
+    console.log(numeroTabuada * i);
   }
 }
 
