@@ -1,0 +1,10 @@
+Requisiçaõ HTTP 
+
+URL: 
+
+
+Request Method: Get | Post | Put | delete
+
+Resquest Headear
+
+Body
