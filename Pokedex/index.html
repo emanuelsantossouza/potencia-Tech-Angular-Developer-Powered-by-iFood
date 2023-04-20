@@ -10,6 +10,7 @@
     <!-- Nosso CSS-->
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/pokedex.css">
+    <link rel="stylesheet" href="assets/css/pokedexShow.css">
     <!-- Normalize css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -20,6 +21,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&family=Roboto+Condensed:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+
 
 </head>
 
@@ -43,13 +48,87 @@
                             alt="">
                     </div>
                 </li> -->
-
-
             </ol>
         </ul>
-
         <div class="loadMoreButton">
             <button id="loadMoreButton" type="button">Load More</button>
+        </div>
+    </section>
+
+
+    <section class="contentShow">
+        <div class="arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+
+
+        <div class="title">
+            <h1>Bulbasaur</h1>
+            <li class="number">#001</li>
+            <div class="head">
+                <ol class="types">
+                    <li class="type">Grass</li>
+                    <li class="type">Poison</li>
+                </ol>
+            </div>
+
+        </div>
+
+
+        <div class="img">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
+        </div>
+
+        <div class="contentBody">
+            <div class="contentHead">
+                <ol class="sets">
+                    <li>about</li>
+                    <li>Base Stats</li>
+                    <li>Evolutinos</li>
+                    <li>Moves</li>
+                </ol>
+            </div>
+
+            <div class="statsPokemons">
+                <div class="species">
+                    <h3>Species</h3>
+                    <p>Seede</p>
+                </div>
+
+                <div class="species">
+                    <h3>Height</h3>
+                    <p>23432432cm</p>
+                </div>
+                <div class="species">
+                    <h3>Weight</h3>
+                    <p>123kg</p>
+                </div>
+                <div class="species">
+                    <h3>abilites</h3>
+                    <p>Overgrow, Cherobply</p>
+                </div>
+
+                <div class="breading">
+                    <h3>Breading</h3>
+
+                    <div class="breadings">
+                        <h4 class="gender">Gender</h4>
+                        <p><span class="genderPorcetagem">76%</span> 32%</p>
+                    </div>
+
+                    <div class="breadings">
+                        <h4>Egg Grouds</h4>
+                        <p class="moster">Moster</p>
+                    </div>
+
+                    <div class="breadings">
+                        <h4>Egg Clycle</h4>
+                        <p class="grasss">Grass</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -59,6 +138,9 @@
     <script src="assets/js/pokemon.model.js"></script>
     <script src="assets/js/poke-api.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!--Bootstrap-->
+
 </body>
 
 </html>
