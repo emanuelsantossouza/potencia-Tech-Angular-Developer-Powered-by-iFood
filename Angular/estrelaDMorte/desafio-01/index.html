@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,43 @@
     <link rel="stylesheet" href="styles/card.css">
     <title>Portal de Noticias Galactica</title>
 </head>
+
 <body>
-    <div class="conteudo">
-        <div class="fotoPerfil">
-            <div class="foto">
-                <img src="" alt="">
-            </div>
-            <h6></h6>
-        </div>
+    <!--Html normal-->
 
-        <div class="ConteudoPrincipal">
-            <h5></h5>
-            <p></p>
-        </div>
+    <!-- Html com o Shadow DOM-->
+    <card-news 
+    autor="Emanuel"
+    title="Darth Vader Contrata Devs!!!"
+    link-url="https://github.com/emanuelsantossouza"
+    desc="Darth Vader procura desenvolvedores que sabem trabalhar com components" src="assets/darth-varde.jpeg"
+    alt="Darth Vader">
+    </card-news>
+    
+    <card-news 
+    autor="Maria"
+    title="Darth Vader Contrata Design!!!"
+    link-url="https://github.com/emanuelsantossouza"
+    desc="Darth Vader procura Design que sabem trabalhar com components" 
+    src="assets/darth-varde.jpeg"
+    alt="Darth Vader">
+    </card-news>
 
-        <img src="" alt="">
-    </div>
+    <card-news 
+    autor="Yoda"
+    title="Darth Vader Contrata Design!!!"
+    link-url="https://github.com/emanuelsantossouza"
+    desc="Darth Vader procura Design que sabem trabalhar com components" 
+    src="assets/darth-varde.jpeg"
+    alt="Darth Vader">
+    </card-news>
+    
 
 
-    <div class="container">
 
-        <div class="card">
-            <div class="card-left">
-                <span>By Emanuel Santos</span>
-                <h1><a href="#">Darth Vader Contrata Devs</a> </h1>
-                <p>Darth Vader procura desenvolvedores que sabem trabalhar com components</p>
-            </div>
-
-            <div class="card-right">
-                <img src="assets/darth-varde.jpeg" alt="">
-            </div>
-        </div>
-    </div>
-
-    <card-news></card-news>
-    <titulo-dinamico titulo="Noticia urgente"></titulo-dinamico>
-    <script src="src/Components/CardNews.js" defer></script>
-    <script src="src/Components/TituloDinamico.js"></script>
+    <!-- <script src="src/Components/CardNews.js" defer></script>
+    <script src="src/Components/TituloDinamico.js"></script> -->
+    <script src="src/Components/CardNewsProf.js"></script>
 </body>
+
 </html>
