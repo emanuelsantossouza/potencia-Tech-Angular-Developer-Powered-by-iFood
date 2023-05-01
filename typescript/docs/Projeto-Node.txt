@@ -1,0 +1,17 @@
+-- Como criar uma aplicação com node "Json"
+
+Para iniciar o projeto em json 
+-- "npm init -y"
+
+Para abaixar o typrscript no em nivel de projeto
+-- "npm install typrscript -D"
+
+Crie um aquivo com o ".ts"
+
+Para Fazer a conversao de TS em JS
+-- "npx tsc nomeDArquivo.js"
+
+Para criar o Tsconfig configura os arquivos Ts
+-- "npx tsc --int"
+
+Dentro do package.json, crie um start: "npx tsc && node build/index.js"

@@ -69,6 +69,8 @@ class CardNewsProf extends HTMLElement {
     }
 
     .card-left >  a {
+      font-size: 2rem;
+      font-weight: 700;
       text-decoration: none;
       color: black;
     }
