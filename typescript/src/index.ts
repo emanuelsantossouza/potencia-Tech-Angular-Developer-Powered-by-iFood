@@ -11,3 +11,7 @@ printObjects({
     name: "Bruce Wayne",
     vulgo: "Batman",
 })
+
+
+
+
