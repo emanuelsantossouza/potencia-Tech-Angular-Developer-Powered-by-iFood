@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsc && node build/index.js && node build/tiposTs.js && node build/funcoes.js && node build/interface.js",
+    "start": "npx tsc && node build/index.js && node build/tiposTs.js && node build/funcoes.js && node build/interface.js  && node build/classe.js && node build/generics.js && node build/decorators.js",
+    "start-dev": "ts-node-dev --respawn --transpile-only src/decorators.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4"
   }
 }

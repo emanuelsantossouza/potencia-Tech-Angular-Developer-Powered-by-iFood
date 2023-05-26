@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/card.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Portal de Noticias Galactica</title>
+</head>
+
+<body>
+   
+    <div class="container">
+        
+        <!--Html normal-->
+        <div class="card">
+            <div class="card-left">
+                <span>By Emanuel Santos</span>
+                <h1><a href="#">Darth Vader Contrata Devs</a> </h1>
+                <p>Darth Vader procura desenvolvedores que sabem trabalhar com components</p>
+            </div>
+
+            <div class="card-right">
+                <img src="assets/darth-varde.jpeg" alt="">
+            </div>
+        </div>
+
+        <!-- Html com o Shadow DOM-->
+        <card-news autor="Emanuel" title="Darth Vader Contrata Devs!!!" link-url="https://github.com/emanuelsantossouza"
+            desc="Darth Vader procura desenvolvedores que sabem trabalhar com components" src="assets/darth-varde.jpeg"
+            alt="Darth Vader">
+        </card-news>
+
+        <card-news autor="Maria" title="Darth Vader Contrata Design!!!" link-url="https://github.com/emanuelsantossouza"
+            desc="Darth Vader procura designs que sabem trabalhar com photoshop"
+            alt="Darth Vader">
+        </card-news>
+
+        <card-news autor="João" title="Darth Vader Contrata Segurança da Informação!!!" link-url="https://github.com/emanuelsantossouza"
+            desc="Darth Vader procura Seguranças da Informação que sabem trabalhar com Kali Linux" src="assets/darth-varde.jpeg"
+            alt="Darth Vader">
+        </card-news>
+
+        <card-news autor="Vitoria" title="Darth Vader Contrata Devs!!!" link-url="https://github.com/emanuelsantossouza"
+            desc="Darth Vader procura desenvolvedores que sabem trabalhar com back-end" src="assets/darth-varde.jpeg"
+            alt="Darth Vader">
+        </card-news>
+
+
+        <!-- <script src="src/Components/CardNews.js" defer></script>
+    <script src="src/Components/TituloDinamico.js"></script> -->
+        <script src="src/Components/CardNewsProf.js"></script>
+</body>
+
+</html>

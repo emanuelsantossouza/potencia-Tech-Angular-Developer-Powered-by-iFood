@@ -1,16 +1,24 @@
-type heroi = {
-    name: string;
-    vulgo: string;
-};
+// type heroi = {
+//     name: string;
+//     vulgo: string;
+// };
 
-function printObjects(pessoa: heroi) {
-    console.log(pessoa);    
-}
+// function printObjects(pessoa: heroi) {
+//     console.log(pessoa);
+// }
 
-printObjects({
-    name: "Bruce Wayne",
-    vulgo: "Batman",
-})
+// printObjects({
+//     name: "Bruce Wayne",
+//     vulgo: "Batman",
+// })
+
+
+
+
+
+
+
+
 
 
 
