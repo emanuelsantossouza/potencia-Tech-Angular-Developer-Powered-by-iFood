@@ -7,6 +7,23 @@ import { Component } from '@angular/core';
 })
 export class CardDiretivasAtributosComponent {
   estilo: string = 'enable'
+  corFundo: string = 'red'
+  item: string =''
+  listaCarrinho: string[] = [];
+  isEnableBlock: boolean = false;
+  constructor() { }
 
-  constructor(){}
+  trocarCor() {
+    if (this.estilo === 'enable') {
+      this.estilo = 'disable';
+    } else {
+      this.estilo ='enable'
+    }
+  }
+
+  addList() {
+    this.listaCarrinho.push(this.item);
+    this.item = '';
+    this.isEnableBlock = true;
+  }
 }

@@ -1,1 +1,16 @@
 <p [ngClass]="estilo">card-diretivas-atributos works!</p>
+<button (click)="trocarCor()">Changes</button>
+<h1 [ngStyle]="{'background': corFundo}">Curso em Angular</h1>
+
+<h1>Lista de Compras</h1>
+<input type="text" [(ngModel)]="item">
+<button (click)="addList()">Adicionar ao Carrinho</button>
+<hr>
+<h3>Adicionado no carrinho de compras</h3>
+<ul *ngFor="let i of listaCarrinho"><li> <p>{{i}}</p></li></ul>
+
+
+<ng-template [ngIf]="isEnableBlock"><p>Compra Finalizada Com sucesso</p></ng-template>
+
+<ng-content selected="p"></ng-content>
+<br>
