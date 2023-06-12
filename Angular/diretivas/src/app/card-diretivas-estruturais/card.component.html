@@ -1,0 +1,38 @@
+<h1>My shofy</h1>
+<p>Card Funcoinouu tropaa</p>
+<button>Olá guys</button>
+<ul>
+  <li *ngFor="let p of produtos; let i = index" (click)="pegarIdERemove(i)">
+    id: {{i}}- {{p}}</li>
+    <p>click no elemento para remove-lo dinamicamente</p>
+  <button (click)="adicionar()">Adicionar</button>
+  <button (click)="remover()">Adicionar</button>
+</ul>
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase=" 'user'">
+    <ul>
+      <li>Editar Perfil</li>
+      <li>Adicionar Cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase=" 'admin'">
+    <ul>
+      <li>Editar Perfil</li>
+      <li>Adicionar Cartão</li>
+      <li>Gerenciar Usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase=" 'superuser'">
+    <ul>
+      <li>Editar Perfil</li>
+      <li>Adicionar Cartão</li>
+      <li>Gerenciar Usuarios</li>
+      <li>Gerenciar Admins</li>
+    </ul>
+  </div>
+
+  <button (click)="torneseAdmin()">torne-se um admin</button>
+    <p>Ou</p>
+  <button (click)="torneseSuperusuario()">torne-se um Super Usuario</button>
+</div>
