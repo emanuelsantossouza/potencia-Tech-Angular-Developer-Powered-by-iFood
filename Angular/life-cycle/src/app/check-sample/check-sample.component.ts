@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./check-sample.component.css']
 })
 export class CheckSampleComponent {
+	mais() { }
 
+	menos(){}
 }
