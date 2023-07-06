@@ -1,0 +1,13 @@
+<!-- Projeto mocado-->
+<div class="card">
+  <div class="card__title">
+    <h3>{{namePokemon}}</h3>
+  </div>
+  <div class="card__body">
+    <img src="{{photoPokemon}}" alt="Pokemon">
+  </div>
+
+  <div class="card__stats">
+    <span *ngFor="let types of attributesTypes" class="card__stats_type">{{types}}</span>
+  </div>
+</div>
