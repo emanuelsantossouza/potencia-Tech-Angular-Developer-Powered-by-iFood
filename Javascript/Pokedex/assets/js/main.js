@@ -2,6 +2,7 @@ const noHTML = document.getElementById("listPokemon");
 const noHtmlPokemonDetails = document.getElementById("pokemonShowDetails");
 const loadMoreButton = document.getElementById("loadMoreButton");
 
+
 const limit = 3;
 let offset = 0;
 const maxRecords = 151;
@@ -9,21 +10,22 @@ const maxRecords = 151;
 // Enviado para o html com o dom
 function loadPokemonItens(offset, limit) {
   pokeapi.getPokemons(offset, limit).then((pokemons = []) => {
+    console.log(pokemons)
     const newHtml = pokemons
       .map(
         (pokemon) =>
           `<li class="pokemon ${pokemon.type}" id="pokemonShowDetails">
-                         <span class="number">#${pokemon.number}</span>
+                         <span class="number" data-pokemon-id="${pokemon.number}" >#${pokemon.number}</span>
                          <span class="name">${pokemon.name}</span>
 
                          <div class="detail">
                              <ol class="types">
                                  ${pokemon.types
-                                   .map(
-                                     (type) =>
-                                       `<li class="type ${type}">${type}</li>`
-                                   )
-                                   .join("")}
+            .map(
+              (type) =>
+                `<li class="type ${type}">${type}</li>`
+            )
+            .join("")}
                              </ol>
                              <img src="${pokemon.photo}" alt="${pokemon.name}">
                          </div>
@@ -31,6 +33,18 @@ function loadPokemonItens(offset, limit) {
       )
       .join("");
     noHTML.innerHTML += newHtml;
+
+
+    const numberSpans = document.querySelectorAll('.number');
+    // Adicionando o evento de clique para cada elemento com a classe "number"
+
+    numberSpans.forEach((span) => {
+      span.addEventListener('click', async () => {
+        const pokemonId = parseInt(span.getAttribute('data-pokemon-id'));
+        console.log(pokemonId);
+        loadMoreDetails(pokemonId)
+      });
+    });
   });
 }
 
@@ -52,15 +66,24 @@ loadMoreButton.addEventListener("click", () => {
   }
 });
 
+
+async function pokeShowDetailsId(pokemonId) {
+  // Faça algo com o ID do Pokémon aqui
+  console.log(pokemonId);
+
+}
+
+
 function loadMoreDetails(id) {
-  pokeapiShowDetails.getPokemons(id).then((pokemons = []) => {
-    console.log(pokemons);
-      const newHtml = pokemons.map((pokemon) => 
-      ` 
-       <div class="arrow">
+  console.log(` O id chegou aqui ${id}`);
+
+  pokeapiShowDetails.getPokemons(id)
+    .then((pokemon) => {
+      const newHtml = () => {
+        return `
+        <div class="arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
         </div>
-
 
         <div class="title">
             <h1>${pokemon.name}</h1>
@@ -74,11 +97,9 @@ function loadMoreDetails(id) {
 
         </div>
 
-
-        <div class="img">
+          <div class="img">
             <img src="${pokemon.photo}" alt="">
         </div>
-
 
         <div class="contentBody">
             <div class="contentHead">
@@ -93,7 +114,7 @@ function loadMoreDetails(id) {
             <div class="statsPokemons">
                 <div class="species">
                     <h3>Species</h3>
-                    <p>${pokemon.type}</p>
+                    <p>${pokemon.specie}</p>
                 </div>
 
                 <div class="species">
@@ -131,13 +152,13 @@ function loadMoreDetails(id) {
             </div>
 
         </div>
-    `
-      )
-      noHtmlPokemonDetails.innerHTML = newHtml
-  });
+        `
+
+      }
+      noHtmlPokemonDetails.innerHTML = newHtml();
+    });
 }
 
-loadMoreDetails(0);
 
 // function convertPokemonToLi(pokemon) {
 //   return `<li class="pokemon ${pokemon.type}">

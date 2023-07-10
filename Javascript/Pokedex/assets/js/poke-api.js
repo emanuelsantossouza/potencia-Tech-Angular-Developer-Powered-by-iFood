@@ -25,7 +25,7 @@ pokeapi.getPokemonsDetail = (pokemon) => {
 };
 
 // Requisição dos dados, transformação em json, buscando os detalhes, realizando a promisse com mais requisições
-pokeapi.getPokemons = (offset =0, limit=5) => {
+pokeapi.getPokemons = (offset = 0, limit = 5) => {
   const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
   return fetch(url)
     .then((Response) => Response.json())
