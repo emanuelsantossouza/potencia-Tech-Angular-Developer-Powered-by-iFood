@@ -16,14 +16,17 @@ class PokemonShowDetails {
 const pokeapiShowDetails = {};
 pokeApiEggsGroup = {};
 
+let pegandoIdPokemonListas = document.getElementById('listasPokemon');
+const pegarIdPokemonShowDetails = document.getElementById("pokemonShowDetails");
+
 let eggs = [];
 
 
 // Convertendo os dados da PokeApi para o dados do nosso models, deixando mais facies de utilizar no html
 function convertPokemonDetailToPokemonShowDetailsModels(pokeDetail) {
+  retirarListaPokemon();
   console.log(pokeDetail);
   pokeApiEggsGroup.getEggs(pokeDetail.species.url);
-
 
 
   const pokemonShowDetailsToHtml = new PokemonShowDetails();
@@ -60,7 +63,17 @@ function convertPokemonDetailToPokemonShowDetailsModels(pokeDetail) {
   console.log(eggs);
   console.log(pokemonShowDetailsToHtml.eggGrounds)
 
+
+
+
   return pokemonShowDetailsToHtml;
+}
+
+
+function retirarListaPokemon() {
+  pegandoIdPokemonListas.style.display = 'none';
+  pegarIdPokemonShowDetails.style.display = 'block';
+
 }
 
 

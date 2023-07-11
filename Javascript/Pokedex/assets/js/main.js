@@ -7,6 +7,9 @@ const limit = 3;
 let offset = 0;
 const maxRecords = 151;
 
+const voltarToListasPokemons = document.getElementById("listasPokemon");
+const removerPokemonShowDetails = document.getElementById("pokemonShowDetails");
+
 // Enviado para o html com o dom
 function loadPokemonItens(offset, limit) {
   pokeapi.getPokemons(offset, limit).then((pokemons = []) => {
@@ -83,7 +86,7 @@ function loadMoreDetails(id) {
         return `
         <div class="${pokemon.type}">
         <div class="icons">
-          <i class="fa-solid fa-arrow-left fa-lg"></i>
+          <i class="fa-solid fa-arrow-left fa-lg" id="VoltarParaListaPokemons"></i>
           <i class="fa-regular fa-heart fa-lg"></i>
         </div>
 
@@ -169,9 +172,21 @@ function loadMoreDetails(id) {
 
       }
       noHtmlPokemonDetails.innerHTML = newHtml();
+
+
+      const voltarParaListaPokemon = document.getElementById('VoltarParaListaPokemons');
+
+      voltarParaListaPokemon.addEventListener('click', () => {
+        voltarParaPokemonLista();
+      });
+
     });
 }
 
+function voltarParaPokemonLista() {
+  voltarToListasPokemons.style.display = 'grid';
+  removerPokemonShowDetails.style.display = 'none';
+}
 
 // function convertPokemonToLi(pokemon) {
 //   return `<li class="pokemon ${pokemon.type}">
