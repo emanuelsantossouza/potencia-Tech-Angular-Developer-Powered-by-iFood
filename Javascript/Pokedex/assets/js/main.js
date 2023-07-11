@@ -14,8 +14,8 @@ function loadPokemonItens(offset, limit) {
     const newHtml = pokemons
       .map(
         (pokemon) =>
-          `<li class="pokemon ${pokemon.type}" id="pokemonShowDetails">
-                         <span class="number" data-pokemon-id="${pokemon.number}" >#${pokemon.number}</span>
+          `<li class="pokemon ${pokemon.type}" id="pokemonShowDetails" data-pokemon-id="${pokemon.number}">
+                         <span class="number" >#${pokemon.number}</span>
                          <span class="name">${pokemon.name}</span>
 
                          <div class="detail">
@@ -35,12 +35,12 @@ function loadPokemonItens(offset, limit) {
     noHTML.innerHTML += newHtml;
 
 
-    const numberSpans = document.querySelectorAll('.number');
+    const numberSpans = document.querySelectorAll('.pokemon');
     // Adicionando o evento de clique para cada elemento com a classe "number"
 
-    numberSpans.forEach((span) => {
-      span.addEventListener('click', async () => {
-        const pokemonId = parseInt(span.getAttribute('data-pokemon-id'));
+    numberSpans.forEach((li) => {
+      li.addEventListener('click', async () => {
+        const pokemonId = parseInt(li.getAttribute('data-pokemon-id'));
         console.log(pokemonId);
         loadMoreDetails(pokemonId)
       });
@@ -81,77 +81,90 @@ function loadMoreDetails(id) {
     .then((pokemon) => {
       const newHtml = () => {
         return `
-        <div class="arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
+        <div class="${pokemon.type}">
+        <div class="icons">
+          <i class="fa-solid fa-arrow-left fa-lg"></i>
+          <i class="fa-regular fa-heart fa-lg"></i>
         </div>
 
-        <div class="title">
-            <h1>${pokemon.name}</h1>
-            <li class="number">${pokemon.id}</li>
-            <div class="head">
-                <ol class="types">
-                    <li class="type">Grass</li>
-                    <li class="type">Poison</li>
-                </ol>
+          <div class="title">
+              <h1>${pokemon.name}</h1>
+              <li class="number">${pokemon.id}</li>
+              <div class="head">
+                  <ol class="types">
+                      ${pokemon.types.map((type) =>
+          `
+                        <li class="type ${type}">${type}</li>
+
+                      `
+        ).join(" ")} 
+                  </ol>
+              </div>
+
+          </div>
+
+            <div class="img">
+              <img src="${pokemon.photo}" alt="">
             </div>
 
+          <div class="contentBody">
+              <div class="contentHead">
+                  <ol class="sets">
+                      <li>about</li>
+                      <li>Base Stats</li>
+                      <li>Evolutinos</li>
+                      <li>Moves</li>
+                  </ol>
+              </div>
+
+              <div class="statsPokemons">
+                  <div class="species">
+                      <h3>Species</h3>
+                      <p>${pokemon.specie}</p>
+                  </div>
+
+                  <div class="species">
+                      <h3>Height</h3>
+                      <p>${pokemon.height} Cm</p>
+                  </div>
+                  <div class="species">
+                      <h3>Weight</h3>
+                      <p>${pokemon.weight} Kg</p>
+                  </div>
+                  <div class="species">
+                      <h3>abilites</h3>
+                      <p>${pokemon.abilities}</p>
+                  </div>
+
+                  <div class="breading">
+                      <h3>Breading</h3>
+
+                      <div class="breadings">
+                          <h4 class="gender">Gender</h4>
+                          <p><span class="genderPorcetagem">76%</span> 32%</p>
+                      </div>
+
+                      <div class="breadings">
+                          <h4>Egg Grouds</h4>
+                          ${pokemon.eggGrounds.map((eggs) =>
+          `
+                         <p class="moster">${eggs}</p>`
+        ).join(" ")}
+        
+                          
+                      </div>
+
+                      <div class="breadings">
+                          <h4>Egg Clycle</h4>
+                          <p class="grasss">Grass</p>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
         </div>
 
-          <div class="img">
-            <img src="${pokemon.photo}" alt="">
-        </div>
-
-        <div class="contentBody">
-            <div class="contentHead">
-                <ol class="sets">
-                    <li>about</li>
-                    <li>Base Stats</li>
-                    <li>Evolutinos</li>
-                    <li>Moves</li>
-                </ol>
-            </div>
-
-            <div class="statsPokemons">
-                <div class="species">
-                    <h3>Species</h3>
-                    <p>${pokemon.specie}</p>
-                </div>
-
-                <div class="species">
-                    <h3>Height</h3>
-                    <p>${pokemon.height} Cm</p>
-                </div>
-                <div class="species">
-                    <h3>Weight</h3>
-                    <p>${pokemon.weight} Kg</p>
-                </div>
-                <div class="species">
-                    <h3>abilites</h3>
-                    <p>${pokemon.abilities}</p>
-                </div>
-
-                <div class="breading">
-                    <h3>Breading</h3>
-
-                    <div class="breadings">
-                        <h4 class="gender">Gender</h4>
-                        <p><span class="genderPorcetagem">76%</span> 32%</p>
-                    </div>
-
-                    <div class="breadings">
-                        <h4>Egg Grouds</h4>
-                        <p class="moster"></p>
-                    </div>
-
-                    <div class="breadings">
-                        <h4>Egg Clycle</h4>
-                        <p class="grasss">Grass</p>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
         `
 
       }

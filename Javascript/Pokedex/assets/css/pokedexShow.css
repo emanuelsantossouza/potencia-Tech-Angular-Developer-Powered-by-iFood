@@ -3,8 +3,18 @@
   padding: 0;
 }
 
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 20px 0 20px;
+  margin-bottom: -0.7rem;
+}
+
+.icons>i {
+  color: white;
+}
+
 .contentShow {
-  background-color: #49d0b0;
   border-radius: 3rem;
 }
 
@@ -32,7 +42,6 @@
 }
 
 .contentShow .title .type {
-  background-color: #4addba;
   border-radius: 2rem;
   filter: brightness(1.1);
   margin: 0.2rem;
@@ -128,8 +137,10 @@ ol {
 }
 
 .statsPokemons .breading h3 {
-  margin-bottom: 0.7rem;
-  font-size: 1.145rem;
+  margin-top: 1rem;
+  margin-bottom: .7rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .statsPokemons .breading h4 {

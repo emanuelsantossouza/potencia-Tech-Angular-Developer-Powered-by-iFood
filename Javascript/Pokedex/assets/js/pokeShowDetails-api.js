@@ -1,6 +1,3 @@
-const pokeapiShowDetails = {};
-let pokemonJson;
-
 class PokemonShowDetails {
   name;
   id;
@@ -12,20 +9,35 @@ class PokemonShowDetails {
   weight;
   abilities = [];
   gender;
-  eggGrounds;
+  eggGrounds = [];
   eggClycle;
 }
 
+const pokeapiShowDetails = {};
+pokeApiEggsGroup = {};
+
+let eggs = [];
 
 
 // Convertendo os dados da PokeApi para o dados do nosso models, deixando mais facies de utilizar no html
 function convertPokemonDetailToPokemonShowDetailsModels(pokeDetail) {
   console.log(pokeDetail);
+  pokeApiEggsGroup.getEggs(pokeDetail.species.url);
+
 
 
   const pokemonShowDetailsToHtml = new PokemonShowDetails();
   pokemonShowDetailsToHtml.name = pokeDetail.name;
   pokemonShowDetailsToHtml.id = pokeDetail.id;
+
+
+  const types = pokeDetail.types.map((typeSlot) => (typeSlot.type.name));
+  const [type] = types;
+  console.log(type);
+
+  pokemonShowDetailsToHtml.types = types;
+  pokemonShowDetailsToHtml.type = type;
+
 
 
   pokemonShowDetailsToHtml.photo = pokeDetail.sprites.other.dream_world.front_default;
@@ -36,6 +48,17 @@ function convertPokemonDetailToPokemonShowDetailsModels(pokeDetail) {
     (abilityShow) => abilityShow.ability.name
   ).join(", ");
 
+  let arrayEggs = [];
+
+  eggs.map((egg) => arrayEggs = egg)
+
+  arrayEggs.forEach((egg) => {
+    console.log(egg)
+    pokemonShowDetailsToHtml.eggGrounds.unshift(egg.name)
+  })
+
+  console.log(eggs);
+  console.log(pokemonShowDetailsToHtml.eggGrounds)
 
   return pokemonShowDetailsToHtml;
 }
@@ -59,4 +82,11 @@ pokeapiShowDetails.getPokemons = async (id) => {
     .then((jsonBody) => convertPokemonDetailToPokemonShowDetailsModels(jsonBody));
 };
 
+pokeApiEggsGroup.getEggs = async (url) => {
 
+  return await fetch(url)
+    .then((results) => results.json())
+    .then((jsonBody) => jsonBody.egg_groups)
+    .then((egg) => eggs.unshift(egg));
+}
+// https://pokeapi.co/api/v2/pokemon-species/1
